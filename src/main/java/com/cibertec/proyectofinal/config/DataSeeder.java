@@ -21,7 +21,7 @@ public class DataSeeder implements CommandLineRunner {
     public void run(String... args) {
         usuarioRepository.findByUsername("admin").ifPresentOrElse(
                 u -> {
-                    // Si existe, garantizamos que su password sea admin123 en BCrypt
+                    // admin123 en BCrypt
                     u.setPassword(passwordEncoder.encode("admin123"));
                     u.setRol("ADMIN");
                     u.setActivo(true);
